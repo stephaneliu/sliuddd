@@ -17,13 +17,9 @@ require "rails_helper"
 RSpec.describe "/books", type: :request do
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do
-    skip("Add a hash of attributes valid for your model")
-  end
+  let(:valid_attributes) { skip("Add a hash of attributes valid for your model") }
 
-  let(:invalid_attributes) do
-    skip("Add a hash of attributes invalid for your model")
-  end
+  let(:invalid_attributes) { skip("Add a hash of attributes invalid for your model") }
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -59,9 +55,7 @@ RSpec.describe "/books", type: :request do
   describe "POST /create" do
     context "with valid parameters" do
       it "creates a new Book" do
-        expect do
-          post books_url, params: { book: valid_attributes }
-        end.to change(Book, :count).by(1)
+        expect { post books_url, params: { book: valid_attributes } }.to change(Book, :count).by(1)
       end
 
       it "redirects to the created book" do
@@ -72,9 +66,9 @@ RSpec.describe "/books", type: :request do
 
     context "with invalid parameters" do
       it "does not create a new Book" do
-        expect do
-          post books_url, params: { book: invalid_attributes }
-        end.to change(Book, :count).by(0)
+        expect { post books_url, params: { book: invalid_attributes } }.to change(Book, :count).by(
+          0
+        )
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
@@ -86,9 +80,7 @@ RSpec.describe "/books", type: :request do
 
   describe "PATCH /update" do
     context "with valid parameters" do
-      let(:new_attributes) do
-        skip("Add a hash of attributes valid for your model")
-      end
+      let(:new_attributes) { skip("Add a hash of attributes valid for your model") }
 
       it "updates the requested book" do
         book = Book.create! valid_attributes
@@ -117,9 +109,7 @@ RSpec.describe "/books", type: :request do
   describe "DELETE /destroy" do
     it "destroys the requested book" do
       book = Book.create! valid_attributes
-      expect do
-        delete book_url(book)
-      end.to change(Book, :count).by(-1)
+      expect { delete book_url(book) }.to change(Book, :count).by(-1)
     end
 
     it "redirects to the books list" do

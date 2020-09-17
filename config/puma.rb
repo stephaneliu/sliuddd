@@ -8,13 +8,11 @@ threads threads_count, threads_count
 
 preload_app!
 
-rackup      DefaultRackup
-port        ENV.fetch("PORT", 3000)
+rackup DefaultRackup
+port ENV.fetch("PORT", 3000)
 environment ENV.fetch("RAILS_ENV", "development")
 
-on_worker_boot do
-  ActiveRecord::Base.establish_connection
-end
+on_worker_boot { ActiveRecord::Base.establish_connection }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
