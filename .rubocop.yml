@@ -1,6 +1,5 @@
 require:
   - 'rubocop-rspec'
-  - 'test_prof/rubocop'
 
 AllCops:
   NewCops: enable
