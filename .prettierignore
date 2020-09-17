@@ -1,0 +1,9 @@
+db/schema.rb
+db/migrate/*
+coverage
+doc
+docker
+engines/**/db/schema.rb
+engines/**/db/migrate/*
+tmp
+vendor

@@ -21,6 +21,15 @@ Bundler.require(*Rails.groups)
 
 module Sliuddd
   class Application < Rails::Application
+    config.generators do |g|
+      g.helper              false
+      g.test_framework      :rspec, fixture: true
+      g.view_specs          false
+      g.fixture_replacement :factory_bot, dir: "spec/factories"
+      g.helper              false
+      g.template_engine     :haml
+      g.stylesheet_engine   :sass
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 

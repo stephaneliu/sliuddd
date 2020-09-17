@@ -1,0 +1,5 @@
+linters:
+  FinalNewline:
+    enabled: false
+  LineLength:
+    max: 100
