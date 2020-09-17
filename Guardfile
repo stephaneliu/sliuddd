@@ -43,7 +43,7 @@ guard 'process', name: 'Webpacker', command: 'bin/webpack' do
 end
 
 group :rgr, halt_on_fail: true do
-  guard :haml_lint, all_on_start: false do
+  guard :haml_lint, all_on_start: true do
     watch(%r{.+\.html.*\.haml$})
     watch(%r{(?:.+/)?\.haml-lint\.yml$}) { |m| File.dirname(m[0]) }
   end

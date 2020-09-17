@@ -16,7 +16,7 @@ if ENV["COVERAGE"]
     end
 
     minimum_coverage 30
-    maximum_coverage_drop 1
+    # maximum_coverage_drop 1
 
     # https://github.com/simplecov-ruby/simplecov#branch-coverage-ruby--25
     enable_coverage :branch
@@ -40,7 +40,7 @@ if ENV["COVERAGE"]
       file.lines.count > 300
     end
   end
-end # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+end
 
 RSpec.configure do |config|
   config.default_formatter = "doc" if config.files_to_run.one?

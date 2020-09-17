@@ -189,7 +189,7 @@ jobs:
           COVERAGE=true CI=true bundle exec rspec spec
 
       - name: Create coverage artifact
-        uses: action/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: code-coverage
           path: coverage/
