@@ -35,11 +35,6 @@ Naming/VariableNumber:
 Rails:
   Enabled: true
 
-RSpec/AggregateExamples:
-  Enabled: true
-  Include:
-    - 'spec/**/*.rb'
-
 RSpec/DescribeClass:
   Exclude:
     - 'spec/views/**/*'

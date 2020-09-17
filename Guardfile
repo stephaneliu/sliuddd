@@ -79,7 +79,7 @@ group :rgr, halt_on_fail: true do
     dsl.watch_spec_files_for(rails.app_files)
     dsl.watch_spec_files_for(rails.views)
 
-    watch(rails.controllers) do |m|
+    watch(rails.controllers) do |_m|
       [
         rspec.spec.call("routing/\#{m[1]}_routing"),
         rspec.spec.call("controllers/\#{m[1]}_controller"),
@@ -93,12 +93,12 @@ group :rgr, halt_on_fail: true do
     watch(rails.app_controller) { "\#{rspec.spec_dir}/controllers" }
 
     # Capybara features specs
-    watch(rails.view_dirs) { |m| rspec.spec.call("features/\#{m[1]}") }
-    watch(rails.layouts)   { |m| rspec.spec.call("features/\#{m[1]}") }
+    watch(rails.view_dirs) { |_m| rspec.spec.call("features/\#{m[1]}") }
+    watch(rails.layouts)   { |_m| rspec.spec.call("features/\#{m[1]}") }
 
     # Turnip features and steps
     watch(%r{^spec/acceptance/(.+)\.feature$})
-    watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |m|
+    watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |_m|
       Dir[File.join("**/\#{m[1]}.feature")][0] || "spec/acceptance"
     end
   end
